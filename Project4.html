@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Cost of Digitalization | Noah Pillow - Project 4</title>
+<style>
+
+html {
+  font-family: verdana;
+}
+
+body ::selection {
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(white, rgb(38, 68, 98));
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+#title, h5 {
+  text-align: center;
+}
+
+#container-listofbadshit {
+  width: 100%;
+}
+
+#container-listofbadshit > div {
+  float: left;
+}
+
+#listofbadshit {
+  display: inline-block;
+  min-width: 140px;
+  width: 15%;
+}
+
+#listofbadshit ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  border: 1px solid black;
+  border-left: none;
+}
+
+#listofbadshit ul li {
+  padding: 10px;
+  text-align: right;
+  transition: box-shadow 0.7s, color 0.7s;
+}
+
+#listofbadshit ul li:hover {
+  cursor: pointer;
+  box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+#container-explanationofbadshit {
+  display: inline-block;
+  width: 65%;
+  margin-top: 10px;
+}
+
+#explanationofbadshit {
+  display: inline-block;
+  border-left: 1.5px solid black;
+  padding-left: 2%;
+  margin-left: 2%;
+  min-width: 200px;
+  width: 96%;
+  font-size: 1.25em;
+  color:white;
+}
+
+#faceImages {
+  text-align: center;
+}
+
+#faceImages div {
+  display: inline-block;
+}
+
+.faceImage {
+  width: 200px;
+  height: 200px;
+}
+
+.imageCaption h5 {
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+#AAPBar {
+  background-color: rgb(95, 144, 128);
+}
+
+#AAPBar:hover {
+  width: 26%;
+}
+
+#actualBar {
+  background-color: rgb(65, 128, 164);
+}
+
+#actualBar:hover {
+  width: 60%;
+}
+
+.bar {
+  display: block;
+  width: 50px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  border: 1px solid black;
+  margin-left: 20%;
+  transition: width 1s;
+  color: white;
+  overflow: hidden;
+}
+
+.barText {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 1.5em;
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.barText:hover {
+  opacity: 100;
+}
+
+.barText:not(:hover) {
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+#works-cited {
+  display: block;
+  text-align: center;
+  color: gray;
+  width: 98%;
+  flex-shrink: 0;
+}
+
+#works-cited a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2 id="title">The Cost of Digitalization</h2>
+
+<h5>Young kids use digital technology much more than recommended</h5>
+<h5>American Academy of Pediatrics recommended screen time per day for children 8 - 12:</h5>
+<div id="AAPBar" class="bar"><div class="barText noselect">2 hours</div></div>
+
+<br />
+
+<h5>Actual average screen time per day for children 8 - 12:</h5>
+<div id="actualBar" class="bar"><div class="barText noselect">4 hours, 36 minutes</div></div>
+
+<h5>This overuse of digital technology has been shown to directly or indirectly cause:</h5>
+
+<div id="container-listofbadshit">
+  <div id="listofbadshit" class="noselect">
+    <ul>
+	  <li>Diabetes</li>
+	  <li>Developmental Delays</li>
+	  <li>Sleep Disorders</li>
+	  <li>ADHD</li>
+	  <li>Anxiety</li>
+	  <li>Depression</li>
+	</ul>
+  </div>
+  <div id="container-explanationofbadshit">
+    <div id="explanationofbadshit"></div>
+  </div>
+</div>
+
+<h5>In a study of 1100 high school students, increases in after hours phone usage correlated with:</h5>
+<div id="faceImages">
+  <div><figure><figcaption class="imageCaption"><h5>depressed mood,</h5></figcaption><image src="depressed_mood_face.png" class="faceImage noselect"></image></figure></div>
+  <div><figure><figcaption class="imageCaption"><h5>externalizing behavior,</h5></figcaption><image src="externalizing_mood_face.png" class="faceImage noselect"></image></figure></div>
+  <div><figure><figcaption class="imageCaption"><h5>and lower coping skills</h5></figcaption><image src="crying_mood_face.png" class="faceImage noselect"></image></figure></div>
+</div>
+
+<div id="works-cited">
+  <a href="Project 4 - Works Cited.docx" download>Download works cited page</a>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+var listItems = $("#listofbadshit li");
+var badShitDescriptionText = [];
+badShitDescriptionText[0] = "\"Diabetes is a disease in which the body\'s ability to produce or respond to the hormone insulin is impaired, resulting in abnormal metabolism of carbohydrates and elevated levels of glucose in the blood and urine\" (Alphabet).";
+badShitDescriptionText[1] = "The term developmental delay describes \"the condition of a child being less developed mentally or physically than is normal for its age\" (Alphabet).";
+badShitDescriptionText[2] = "\"Sleep disorders are changes in the way that you sleep. A sleep disorder can affect your overall health, safety, and quality of life. [Some common sleep disorders are] insomnia, in which you have difficulty falling asleep or staying asleep throughout the night[; and] sleep apnea, in which you experience abnormal patterns in breathing while you are asleep\" (Mayo Clinic Staff).";
+badShitDescriptionText[3] = "Attention Deficit Disorder is a term that describes \"any of a range of behavioral disorders occurring primarily in children, including such symptoms as poor concentration, hyperactivity, and impulsivity\" (Alphabet).";
+badShitDescriptionText[4] = "Anxiety disorder is \"a nervous disorder characterized by a state of excessive uneasiness and apprehension, typically with compulsive behavior or panic attacks\" (Alphabet).";
+badShitDescriptionText[5] = "Depression is \"a mental condition characterized by feelings of severe despondency and dejection, typically also with feelings of inadequacy and guilt, often accompanied by lack of energy and disturbance of appetite and sleep\" (Alphabet).";
+
+for (var i = listItems.length-1, x = 1; i > -1; i--, x++) {
+  $(listItems[i]).css("background-color", "rgb(" + (255 - x*30) + ", " + (255 - x*20) + ", " + (255 - x*10) + ")");
+}
+
+for (var i = 0; i < listItems.length; i++) {
+  $(listItems[i]).click(generateListItemClickHandler(i));
+}
+
+function generateListItemClickHandler(k) {
+  return function(event) {
+	$("#explanationofbadshit").fadeOut(function() {
+      $(this).text(badShitDescriptionText[k]).fadeIn();
+    });
+  }
+}
+</script>
+</body>
+
+</html>
